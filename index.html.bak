@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+  <title>CGW</title>
+  <style>
+    body {
+      background-color: #EEEEEE;
+    }
+  </style>
+
+  <script src="./Utils/trackball-rotator.js"></script>
+  <script src="./Utils/m4.js"></script>
+  <script src="./shader.gpu"></script>
+  <script src="./main.js"></script>
+
+</head>
+
+<body onload="init()">
+
+  <audio id="audio" src="./song.mp3" controls loop></audio><br>
+  <span>Увімкнути фільтр низьких частот</span><input type="checkbox" id="filterCheckbox" checked>
+
+  <h2>Ding-Dong Surface</h2>
+
+  <p id="message">Drag your mouse on the cube to rotate it.<br>
+    (On a touch screen, you can use your finger.)</p>
+
+  <h2>EyeSeparation</h2>
+  <input type="range" name="EyeSeparation" id="EyeSeparation" value="70" step="5" min="5" max="155">
+  <span class="spans"></span>
+  <h2>FieldOfView</h2>
+  <input type="range" name="FieldOfView" id="FieldOfView" value="0.8" step="0.02" min="0.02" max="1.58">
+  <span class="spans"></span>
+  <h2>NearClippingDistance</h2>
+  <input type="range" name="NearClippingDistance" id="NearClippingDistance" value="5" step="0.1" min="-5" max="10">
+  <span class="spans"></span>
+  <h2>Convergence</h2>
+  <input type="range" name="Convergence" id="Convergence" value="2000" step="50" min="50" max="4000">
+  <span class="spans"></span>
+  <div id="canvas-holder">
+    <canvas width="600" height="600" id="webglcanvas" style="background-color:red"></canvas>
+  </div>
+
+
+</body>
+
+</html>
